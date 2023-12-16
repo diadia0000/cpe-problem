@@ -1,0 +1,15 @@
+while True:
+    try:
+        stay = [float(i) for i in input().split()]
+        point = []
+        ansx = 0 ; ansy = 0
+        x = 0 ; y = 0
+        for i in range(0,8,2):
+            x += stay[i] ; y += stay[i+1]
+            if [stay[i],stay[i+1]] in point:
+                ansx = stay[i] ; ansy = stay[i+1]
+            point.append([stay[i],stay[i+1]])
+        print(f"{x-3*ansx:.3f}",end = " ")
+        print(f"{y-3*ansy:.3f}")
+    except:
+        break
